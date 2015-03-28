@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class GraphTheory {
 	public static class Edge implements Comparable<Edge>{
@@ -16,9 +18,45 @@ public class GraphTheory {
 			return cost - e.cost; 
 		}
 	}
+	
+	public static ArrayList<Integer> TopologicalSort(int[][] graph, int nodeCount){
+		ArrayList<Integer> sorted = new ArrayList<Integer>();
+		int[] count = new int[nodeCount];
+		for(int i = 0; i < nodeCount; i++){
+			for(int x = 0; x < nodeCount; x++){
+				if(graph[i][x] > 0){
+					count[x]++;
+				}
+			}
+		}
+		
+		Queue<Integer> q = new LinkedList<>();
+		for(int i = 0; i < nodeCount; i++){
+			if(count[i] == 0)
+				q.add(i);
+		}
+		
+		while(!q.isEmpty()){
+			int node = q.remove();
+			sorted.add(node);
+			for(int i = 0; i < nodeCount; i++){
+				if(graph[node][i] != 0){
+					graph[node][i] = 0;
+					count[i]--;
+					boolean no = true;
+					if(count[i] != 0){
+						no = false;
+					}
+					if(no)
+						q.add(i);
+				}
+			}
+		}
+		return sorted;
+	}
+	
 	/*------------------------------------------------------------------*/
 	//Prims Algorithm
-	
 	//V^2 Version
 	//Adjacency matrix
 	public static int[] PrimsV2(int[][] graph, int root, int nodeCount, int edgeCount){
