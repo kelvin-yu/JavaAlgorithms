@@ -29,7 +29,7 @@ void modifyRange(int index, int s, int e, int i, int j, int value){
     }
     if(s > e || s > j || e < i)
         return;
-    if(s >= i || e <= j){
+    if(s >= i && e <= j){
         tree[index] += value;
         if(s != e){
             lazy[index * 2] += value;
