@@ -21,8 +21,8 @@ int main()
         for(int i = 0; i < G[cur].size(); i++){
             int target = G[cur][i].first;
             int weight = G[cur][i].second;
-            if(dist[target] > dist[cur] + weight){
-                dist[target] = dist[cur] + weight;
+            if(dist[target] > cost + weight){
+                dist[target] = cost + weight;
                 q.push(make_pair(-dist[target], target));
             }
         }
