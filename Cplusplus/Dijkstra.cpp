@@ -16,6 +16,7 @@ int main()
     while(!q.empty()){
         int cost = -q.top().first;
         int cur = q.top().second;
+        q.pop();
         if(dist[cur] < cost)
             continue;
         for(int i = 0; i < G[cur].size(); i++){
