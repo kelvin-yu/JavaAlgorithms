@@ -23,7 +23,7 @@ int main()
             int weight = G[cur][i].second;
             if(dist[target] > dist[cur] + weight){
                 dist[target] = dist[cur] + weight;
-                q.push(make_pair(dist[target], target));
+                q.push(make_pair(-dist[target], target));
             }
         }
     }
