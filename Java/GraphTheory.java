@@ -121,9 +121,9 @@ public class GraphTheory {
 			int cur = -1;
 			int min = Integer.MAX_VALUE;
 			for(int x = 0; x < nodeCount; x++){
-				if(dist[i] < min){
-					min = dist[i];
-					cur = i;
+				if(dist[x] < min && !visited[x]){
+					min = dist[x];
+					cur = x;
 				}
 			}
 			if(cur == -1)
@@ -131,7 +131,7 @@ public class GraphTheory {
 			visited[cur] = true;
 			for(int x = 0; x < nodeCount; x++){
 				if(graph[cur][x] != 0){
-					if(dist[x] > graph[cur][x]){
+					if(dist[x] > graph[cur][x] && !visited[x]){
 						dist[x] = graph[cur][x];
 						prev[x] = cur;
 					}
