@@ -11,7 +11,7 @@ void build(){
 }
 int ufind(int x){
     int root = x;
-    if(root != id[x]){
+    while(root != id[root]){
         root = id[root];
     }
     while(root != x){
