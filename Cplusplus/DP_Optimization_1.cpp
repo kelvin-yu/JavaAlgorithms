@@ -84,6 +84,17 @@ int main()
         plots.pb(prePrune[i]);
         pCount++;
     }
+    
+    /* Preoptimization (N^2)
+        for(int i = 1; i <= pCount; i++){
+            dp[i] = LLINF;
+            for(int j = 0; j <= i - 1; j++){
+                dp[i] = miN(dp[i], dp[j] + plots[i-1].l * plots[j].w);
+            }
+        }
+        cout << dp[pCount] << endl;
+    */
+    
     ll ans = 0;
     add(plots[0].w, 0);
     for(int i = 0; i < pCount; i++){
