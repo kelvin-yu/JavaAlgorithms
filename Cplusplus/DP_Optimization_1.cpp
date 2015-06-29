@@ -61,6 +61,8 @@ void add(ll m, ll b){
 }
 
 ll query(ll x){
+    if(pointer >= M.size())
+        pointer = M.size() - 1;
     while(pointer < M.size()-1 && M[pointer+1] * x + B[pointer+1] <  M[pointer] * x + B[pointer])
         pointer++;
     return M[pointer] * x + B[pointer];
