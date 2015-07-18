@@ -10,6 +10,7 @@ void update(int i, int val){
     }
 }
 
+/* If using range update, range query with this implementation will not work */
 void rangeUpdate(int l, int r, int val){
     update(l, v);
     update(r + 1, -v);
