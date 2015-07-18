@@ -10,6 +10,11 @@ void update(int i, int val){
     }
 }
 
+void rangeUpdate(int l, int r, int val){
+    update(l, v);
+    update(r + 1, -v);
+}
+
 int sum(int i){
     int sum = 0;
     while(i > 0){
