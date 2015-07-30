@@ -8,7 +8,7 @@ using namespace std;
 #define LLINF                       LLONG_MAX
 #define x                           first
 #define y                           second
-#define pb                          emplace_back
+#define pb                          push_back
 #define fill(a,v)                   memset(a, v, sizeof a)
 #define mp                          make_pair
 #define all(a)                      a.begin(), a.end()
