@@ -1,10 +1,14 @@
 #include<bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
+using namespace __gnu_pbds;
 
 #define s(n)                        scanf("%d",&n)
 #define sc(n)                       scanf("%c",&n)
 #define ss(n)                       scanf("%s",n)
-#define INF                         (int)1e9
+#define sl(n)                       scanf("%lld", &n);
+#define INF                         (int)2e9
 #define LLINF                       LLONG_MAX
 #define x                           first
 #define y                           second
@@ -15,9 +19,14 @@ using namespace std;
 #define COMPRESS(a)                 sort(all(a)); a.erase(unique(all(a)),a.end())
 #define IOS                         ios::sync_with_stdio(0); cin.tie(0)
 #define debug(args...)              {vector<string> v = split(#args, ',');err(v.begin(), args);}
+#define bits(a)                     __builtin_popcount(a)
+#define ffs(a)                      __builtin_ffs(a)
+#define maX(a,b)                     ( (a) > (b) ? (a) : (b))
+#define miN(a,b)                     ( (a) < (b) ? (a) : (b))
 
 typedef long long ll;
 typedef pair<int,int> pii;
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> order_statistics_tree;
 
 vector<string> split(const string& s, char c){vector<string> v;stringstream st(s);string x;while(getline(st, x, c))v.pb(x);return move(v);}
 void err(vector<string>::iterator it) {}
@@ -37,7 +46,5 @@ template<typename T1, typename T2>
 inline ostream&operator<<(ostream&os,const unordered_map<T1,T2>&v){os<<"-BEGIN MAP-\n";bool _= 1;for(auto i:v){if(!_)os<<endl;os<<" "<<i;_=0;}return os<<"\n--END MAP--";}
 
 
-int main()
-{
-
+int main(){
 }
