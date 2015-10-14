@@ -18,7 +18,7 @@ void build(int index, int s, int e){
     tree[index] = max(tree[index * 2], tree[index * 2 + 1]);
 }
 
-void modifyRange(int index, int s, int e, int i, int j, int value){
+void push(int index, int s, int e){
     if(lazy[index] != 0){
         tree[index] += lazy[index];
         if(s != e){
@@ -27,6 +27,10 @@ void modifyRange(int index, int s, int e, int i, int j, int value){
         }
         lazy[index] = 0;
     }
+}
+
+void modifyRange(int index, int s, int e, int i, int j, int value){
+    push(index, s, e);
     if(s > e || s > j || e < i)
         return;
     if(s >= i && e <= j){
@@ -45,14 +49,7 @@ void modifyRange(int index, int s, int e, int i, int j, int value){
 
 int query(int index, int s, int e, int i, int j){
     if(s > e || s > j || e < i) return -inf;
-    if(lazy[index] != 0){
-        tree[index] += lazy[index];
-        if(s != e){
-            lazy[index * 2] += lazy[index];
-            lazy[index * 2 + 1] += lazy[index];
-        }
-        lazy[index] = 0;
-    }
+    push(index, s, e);
     if(s >= i && e <= j)
         return tree[index];
     int mid = (s+e)/2;
