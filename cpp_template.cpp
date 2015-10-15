@@ -1,8 +1,5 @@
 #include<bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
-using namespace __gnu_pbds;
 
 #define s(n)                        scanf("%d",&n)
 #define sc(n)                       scanf("%c",&n)
@@ -26,7 +23,6 @@ using namespace __gnu_pbds;
 
 typedef long long ll;
 typedef pair<int,int> pii;
-typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> order_statistics_tree;
 
 vector<string> split(const string& s, char c){vector<string> v;stringstream st(s);string x;while(getline(st, x, c))v.pb(x);return move(v);}
 void err(vector<string>::iterator it) {}
