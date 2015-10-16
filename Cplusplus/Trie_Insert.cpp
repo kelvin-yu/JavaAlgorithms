@@ -27,7 +27,7 @@ void add(int cur, string word){
 
 void dfs(int cur){
     if(t[cur] != 0)
-        cout << t[cur] << etrie ndl;
+        cout << t[cur] << endl;
     for(int i = 0; i < 26; i++){
         if(trie[cur][i] != INF){
             dfs(trie[cur][i]);
