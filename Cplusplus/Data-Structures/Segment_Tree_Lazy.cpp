@@ -1,4 +1,3 @@
-//random
 #include<bits/stdc++.h>
 #define MAXN 100000
 #define inf 0x7fffffff
