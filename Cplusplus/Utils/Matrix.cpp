@@ -6,15 +6,13 @@ struct matrix{
     matrix(){
         memset(a, 0, sizeof a);
     }
-    matrix operator* (matrix b){
-        matrix c;
-        for(int k = 0; k < MAXN; k++){
-            for(int i = 0; i < MAXN; i++){
-                for(int j = 0; j < MAXN; j++){
-                    c.a[i][j] = (c.a[i][j] + a[i][k] * b.a[k][j]);
-                }
-            }
-        }
+    matrix operator * (matrix b)
+    {
+        matrix c = matrix();
+        for (int i = 0; i < MAXN; ++i)
+            for (int k = 0; k < MAXN; ++k)
+                for (int j = 0; j < MAXN; ++j) 
+                    c.m[i][j] = (c.m[i][j] + 1LL * m[i][k] * b.m[k][j]);
         return c;
     }
 };
