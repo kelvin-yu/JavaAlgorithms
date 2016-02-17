@@ -4,7 +4,7 @@
 int bit[MAXN];
 
 void update(int i, int val){
-    while(i <= MAXN){
+    while(i < MAXN){
         bit[i] += val;
         i += (-i & i);
     }
