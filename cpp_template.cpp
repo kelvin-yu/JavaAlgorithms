@@ -1,28 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define s(n)                        scanf("%d",&n)
-#define sc(n)                       scanf("%c",&n)
-#define ss(n)                       scanf("%s",n)
-#define sl(n)                       scanf("%lld", &n);
 #define INF                         (int)2e9
 #define LLINF                       LLONG_MAX
 #define x                           first
 #define y                           second
 #define pb                          push_back
-#define fill(a,v)                   memset(a, v, sizeof a)
 #define mp                          make_pair
 #define all(a)                      a.begin(), a.end()
 #define COMPRESS(a)                 sort(all(a)); a.erase(unique(all(a)),a.end())
 #define IOS                         ios::sync_with_stdio(0); cin.tie(0)
 #define debug(args...)              {vector<string> v = split(#args, ',');err(v.begin(), args);}
-#define bits(a)                     __builtin_popcount(a)
-#define ffs(a)                      __builtin_ffs(a)
-#define maX(a,b)                     ( (a) > (b) ? (a) : (b))
-#define miN(a,b)                     ( (a) < (b) ? (a) : (b))
 
 typedef long long ll;
+typedef long double ld;
 typedef pair<int,int> pii;
+typedef pair<double,double> pdd;
 
 vector<string> split(const string& s, char c){vector<string> v;stringstream st(s);string x;while(getline(st, x, c))v.pb(x);return move(v);}
 void err(vector<string>::iterator it) {}
@@ -41,6 +34,6 @@ inline ostream&operator<<(ostream&os,const map<T1,T2>&v){os<<"-BEGIN MAP-\n";boo
 template<typename T1, typename T2>
 inline ostream&operator<<(ostream&os,const unordered_map<T1,T2>&v){os<<"-BEGIN MAP-\n";bool _= 1;for(auto i:v){if(!_)os<<endl;os<<" "<<i;_=0;}return os<<"\n--END MAP--";}
 
-
 int main(){
+
 }
